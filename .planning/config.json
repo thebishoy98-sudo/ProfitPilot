@@ -1,0 +1,16 @@
+{
+  "commit_docs": true,
+  "parallelization": false,
+  "branching_strategy": "none",
+  "phase_branch_template": "phase-{phase}-{slug}",
+  "milestone_branch_template": "milestone-{milestone}-{slug}",
+  "verifier": true,
+  "research": false,
+  "plan_checker": false,
+  "nyquist_validation": false,
+  "brave_search": false,
+  "workflow": {
+    "auto_advance": false,
+    "_auto_chain_active": false
+  }
+}
