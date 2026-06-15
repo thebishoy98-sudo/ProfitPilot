@@ -6,7 +6,7 @@ ProfitPilot starts with an architecture-backed MVP demo that proves the operator
 
 ## Phases
 
-- [ ] **Phase 1: MVP Demo Foundation** - Build the deployable dashboard, domain model, business engines, product packet, schema, and Render blueprint.
+- [x] **Phase 1: MVP Demo Foundation** - Build the deployable dashboard, domain model, business engines, product packet, schema, and Render blueprint.
 - [ ] **Phase 2: Supplier Ingestion** - Add real supplier URL capture, extraction, snapshots, and supplier alerts.
 - [ ] **Phase 3: eBay Integration** - Add OAuth, draft listing creation, inventory sync, and metrics import.
 - [ ] **Phase 4: Agent Automation** - Add real AI agent orchestration, audit logs, scheduled workers, and approval workflows.
@@ -27,7 +27,7 @@ ProfitPilot starts with an architecture-backed MVP demo that proves the operator
 **Plans**: 1 plan
 
 Plans:
-- [ ] 01-01: Build ProfitPilot MVP demo foundation
+- [x] 01-01: Build ProfitPilot MVP demo foundation
 
 ### Phase 2: Supplier Ingestion
 
@@ -75,7 +75,7 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. MVP Demo Foundation | 0/1 | In progress | - |
+| 1. MVP Demo Foundation | 1/1 | Complete | 2026-06-15 |
 | 2. Supplier Ingestion | 0/TBD | Not started | - |
 | 3. eBay Integration | 0/TBD | Not started | - |
 | 4. Agent Automation | 0/TBD | Not started | - |
