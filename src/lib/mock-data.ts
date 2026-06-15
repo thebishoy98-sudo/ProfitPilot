@@ -72,12 +72,12 @@ export const supplierProducts: SupplierProduct[] = [
 ];
 
 export const opportunities: Opportunity[] = [
-  { id: "opp-001", productId: "prod-001", score: 94, expectedMonthlySales: 42, reason: "Strong margin with frequent completed sales" },
-  { id: "opp-002", productId: "prod-002", score: 88, expectedMonthlySales: 24, reason: "Office category demand is steady" },
-  { id: "opp-003", productId: "prod-003", score: 83, expectedMonthlySales: 31, reason: "Kitchen accessory velocity is rising" },
-  { id: "opp-004", productId: "prod-004", score: 52, expectedMonthlySales: 8, reason: "Supplier is currently out of stock" },
-  { id: "opp-005", productId: "prod-005", score: 30, expectedMonthlySales: 12, reason: "Restricted category review required" },
-  { id: "opp-006", productId: "prod-006", score: 76, expectedMonthlySales: 19, reason: "Seasonal cycling demand with supplier alert" },
+  { id: "opp-001", productId: "prod-001", score: 94, demandScore: 91, competitionScore: 35, trendScore: 89, expectedMonthlySales: 42, reason: "Strong margin with frequent completed sales" },
+  { id: "opp-002", productId: "prod-002", score: 88, demandScore: 84, competitionScore: 42, trendScore: 77, expectedMonthlySales: 24, reason: "Office category demand is steady" },
+  { id: "opp-003", productId: "prod-003", score: 83, demandScore: 79, competitionScore: 48, trendScore: 82, expectedMonthlySales: 31, reason: "Kitchen accessory velocity is rising" },
+  { id: "opp-004", productId: "prod-004", score: 52, demandScore: 51, competitionScore: 61, trendScore: 45, expectedMonthlySales: 8, reason: "Supplier is currently out of stock" },
+  { id: "opp-005", productId: "prod-005", score: 30, demandScore: 55, competitionScore: 67, trendScore: 39, expectedMonthlySales: 12, reason: "Restricted category review required" },
+  { id: "opp-006", productId: "prod-006", score: 76, demandScore: 73, competitionScore: 44, trendScore: 81, expectedMonthlySales: 19, reason: "Seasonal cycling demand with supplier alert" },
 ];
 
 export const profitAnalyses: ProfitAnalysis[] = [
@@ -102,6 +102,18 @@ export const listingDrafts: ListingDraft[] = products.map((product) => ({
   productId: product.id,
   title: product.title,
   description: `${product.title} sourced for fast marketplace fulfillment with verified supplier context.`,
+  bullets: [
+    `Optimized ${product.category.toLowerCase()} listing copy written from scratch.`,
+    "Supplier condition, shipping window, and stock status reviewed before listing.",
+    "Prepared for marketplace review without mentioning supplier names.",
+  ],
+  itemSpecifics: {
+    Category: product.category,
+    Condition: "New",
+    Fulfillment: "Supplier monitored",
+  },
+  categoryRecommendation: `${product.category} > Marketplace Accessories`,
+  priceRecommendation: product.salePrice,
   keywords: [product.category.toLowerCase(), "dropship", "fast shipping"],
 }));
 

@@ -21,6 +21,20 @@ export function OpportunityQueue({ opportunities }: OpportunityQueueProps) {
             <div>
               <p className="font-medium text-slate-950">{opportunity.product.title}</p>
               <p className="text-sm text-slate-600">{opportunity.reason}</p>
+              <div className="mt-3 grid grid-cols-2 gap-2 text-xs text-slate-600 sm:grid-cols-4">
+                <span>
+                  <span className="font-semibold text-slate-800">Demand</span> {opportunity.demandScore}
+                </span>
+                <span>
+                  <span className="font-semibold text-slate-800">Competition</span> {opportunity.competitionScore}
+                </span>
+                <span>
+                  <span className="font-semibold text-slate-800">Trend</span> {opportunity.trendScore}
+                </span>
+                <span>
+                  <span className="font-semibold text-slate-800">Risk</span> {opportunity.risk.level}
+                </span>
+              </div>
             </div>
             <div className="text-left sm:text-right">
               <p className="font-semibold text-teal-700">${opportunity.profit.estimatedProfit.toFixed(2)}</p>

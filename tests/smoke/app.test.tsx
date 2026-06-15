@@ -16,3 +16,12 @@ test("renders prioritized operations sections", () => {
   expect(screen.getByText("Recommended Actions")).toBeInTheDocument();
   expect(screen.getByText("Active Listings")).toBeInTheDocument();
 });
+
+test("renders opportunity score dimensions for operator review", () => {
+  render(<HomePage />);
+
+  expect(screen.getAllByText("Demand").length).toBeGreaterThan(0);
+  expect(screen.getAllByText("Competition").length).toBeGreaterThan(0);
+  expect(screen.getAllByText("Trend").length).toBeGreaterThan(0);
+  expect(screen.getAllByText("Risk").length).toBeGreaterThan(0);
+});

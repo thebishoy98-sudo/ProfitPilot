@@ -10,3 +10,13 @@ test("renders a product packet with profit, risk, and listing draft", async () =
   expect(screen.getByText("Risk Assessment")).toBeInTheDocument();
   expect(screen.getByText("Listing Draft")).toBeInTheDocument();
 });
+
+test("renders complete listing studio details", async () => {
+  const Page = await ProductPage({ params: Promise.resolve({ id: "prod-001" }) });
+  render(Page);
+
+  expect(screen.getByText("Bullet Points")).toBeInTheDocument();
+  expect(screen.getByText("Item Specifics")).toBeInTheDocument();
+  expect(screen.getByText("Category Recommendation")).toBeInTheDocument();
+  expect(screen.getByText("Price Recommendation")).toBeInTheDocument();
+});

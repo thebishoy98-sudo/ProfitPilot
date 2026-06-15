@@ -32,6 +32,9 @@ export type Opportunity = {
   id: string;
   productId: string;
   score: number;
+  demandScore: number;
+  competitionScore: number;
+  trendScore: number;
   expectedMonthlySales: number;
   reason: string;
 };
@@ -54,6 +57,10 @@ export type ListingDraft = {
   productId: string;
   title: string;
   description: string;
+  bullets: string[];
+  itemSpecifics: Record<string, string>;
+  categoryRecommendation: string;
+  priceRecommendation: number;
   keywords: string[];
 };
 
