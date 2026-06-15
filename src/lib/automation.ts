@@ -25,15 +25,15 @@ export function evaluateAutomation(input: AutomationInput): AutomationRecommenda
     actions.push({ type: "END_LISTING", priority: "HIGH", message: "End listing until supplier stock returns." });
   }
 
-  if (input.supplierPriceIncreasePercent >= 10) {
+  if (input.supplierPriceIncreasePercent >= 20) {
     actions.push({ type: "RESTOCK_CHECK", priority: "HIGH", message: "Review supplier cost increase before more sales." });
   }
 
-  if (input.activeDays >= 30 && input.watchers === 0 && input.totalSales === 0) {
+  if (input.activeDays >= 30 && input.views < 100 && input.totalSales === 0) {
     actions.push({ type: "END_LISTING", priority: "HIGH", message: "End stale listing with no watchers or sales." });
   }
 
-  if (input.watchers >= 10 && input.salesLast7Days === 0) {
+  if (input.views >= 250 && input.watchers >= 5 && input.salesLast7Days === 0 && input.totalSales === 0) {
     actions.push({ type: "LOWER_PRICE", priority: "MEDIUM", message: "High interest without conversion suggests price testing." });
   }
 

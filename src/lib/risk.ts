@@ -16,6 +16,12 @@ export type RiskResult = {
 
 const restrictedCategories = new Set(["supplements", "medical", "health"]);
 const restrictedKeywords = ["supplement", "herbal", "medical", "prescription", "sleep aid"];
+const keywordFlags = [
+  { flag: "counterfeit_risk", keywords: ["replica", "counterfeit", "knockoff"] },
+  { flag: "fragile_item", keywords: ["fragile", "glass", "ceramic"] },
+  { flag: "battery_item", keywords: ["battery", "lithium"] },
+  { flag: "trademark_risk", keywords: ["trademark", "branded", "compatible"] },
+];
 
 export function assessRisk(input: RiskInput): RiskResult {
   const flags: string[] = [];
@@ -24,6 +30,12 @@ export function assessRisk(input: RiskInput): RiskResult {
 
   if (restrictedCategories.has(category) || restrictedKeywords.some((keyword) => title.includes(keyword))) {
     flags.push("restricted_category");
+  }
+
+  for (const rule of keywordFlags) {
+    if (rule.keywords.some((keyword) => title.includes(keyword))) {
+      flags.push(rule.flag);
+    }
   }
 
   if (input.shippingDays > 7) {
