@@ -13,8 +13,7 @@ services:
           name: profitpilot-db
           property: connectionString
       - key: REDIS_URL
-        fromService:
-          type: redis
+        fromDatabase:
           name: profitpilot-redis
           property: connectionString
       - key: NEXTAUTH_SECRET
@@ -40,18 +39,16 @@ services:
           name: profitpilot-db
           property: connectionString
       - key: REDIS_URL
-        fromService:
-          type: redis
+        fromDatabase:
           name: profitpilot-redis
           property: connectionString
 
 databases:
   - name: profitpilot-db
-    plan: starter
+    plan: free
     databaseName: profitpilot
     user: profitpilot
 
   - name: profitpilot-redis
-    type: redis
-    plan: starter
-    maxmemoryPolicy: allkeys-lru
+    plan: free
+    ipAllowList: []
